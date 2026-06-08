@@ -82,10 +82,6 @@ export const metadata: Metadata = {
       'max-snippet': -1,
     },
   },
-  // هنا قمنا بإضافة كود التحقق من جوجل بشكل احترافي ومتوافق مع Next.js
-  verification: {
-    google: 'google999c899bde6cd386',
-  },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
