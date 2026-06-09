@@ -46,6 +46,9 @@ export const metadata: Metadata = {
     'png to webp',
     'image optimizer',
   ],
+  verification: {
+    google: 'jQcyz_vu95qA-eW-jornb3amVn5VNh8HD_GAyc7R3pI',
+  },
   authors: [{ name: 'Cozuro Tools' }],
   creator: 'Cozuro Tools',
   openGraph: {
