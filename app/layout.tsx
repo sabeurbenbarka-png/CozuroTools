@@ -27,7 +27,7 @@ const mono = DM_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://cozurotools.com'),
+  metadataBase: new URL('https://cozuro-tools.vercel.app'),
   title: {
     default: 'Cozuro Tools — Free Browser-Based File & Image Tools',
     template: '%s | Cozuro Tools',
