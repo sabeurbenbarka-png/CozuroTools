@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { DM_Sans, DM_Mono, Sora } from 'next/font/google';
 import { ThemeProvider } from 'next-themes';
 import { I18nProvider } from '@/i18n/context';
+import { Analytics } from "@vercel/analytics/next";
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import './globals.css';
@@ -102,6 +103,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             <Footer />
           </I18nProvider>
         </ThemeProvider>
+        <Analytics />
       </body>
     </html>
   );
