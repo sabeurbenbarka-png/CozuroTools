@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import { DM_Sans, DM_Mono, Sora } from 'next/font/google';
 import { ThemeProvider } from 'next-themes';
 import { I18nProvider } from '@/i18n/context';
-import { Analytics } from '@vercel/analytics/react';
+import { Analytics } from '@vercel/analytics/next';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import './globals.css';
@@ -95,15 +95,15 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
         <link rel="canonical" href="https://cozurotools.com" />
       </head>
-      <body className={`${body.variable} ${display.variable} ${mono.variable} font-sans antialiased bg-white dark:bg-slate-950 text-slate-900 dark:text-slate-100 min-h-screen flex flex-col`}>
-        <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
+      <body className={`${body.variable} ${display.variable} ${mono.variable} slate-950 text-slate-900 dark:text-slate-100 min-h-screen flex flex-col`}>
+        <ThemeProvider attribute="class" defaultTheme="system">
           <I18nProvider>
             <Navbar />
             <main className="flex-1">{children}</main>
             <Footer />
+            <Analytics />
           </I18nProvider>
         </ThemeProvider>
-        <Analytics />
       </body>
     </html>
   );
