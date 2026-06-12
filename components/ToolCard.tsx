@@ -17,8 +17,10 @@ export default function ToolCard({ toolId }: { toolId: string }) {
   if (!tool) return null;
 
   const Icon = iconMap[tool.icon as keyof typeof iconMap];
-  const nameKey = `tool_${toolId.replace('-', '_')}_name` as TranslationKey;
-  const descKey = `tool_${toolId.replace('-', '_')}_desc` as TranslationKey;
+  
+  // الكود المصحح لضمان مطابقة المفاتيح مع ملف translations.ts
+  const nameKey = (toolId === 'image-compressor' ? 'tool_compressor_name' : 'tool_webp_name') as TranslationKey;
+  const descKey = (toolId === 'image-compressor' ? 'tool_compressor_desc' : 'tool_webp_desc') as TranslationKey;
 
   const badges = [
     { icon: Gift, label: t('tool_free') },

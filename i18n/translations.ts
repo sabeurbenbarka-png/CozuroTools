@@ -15,8 +15,6 @@ export function isRTL(locale: Locale): boolean {
   return rtlLocales.includes(locale);
 }
 
-export type TranslationKey = keyof typeof translations.en;
-
 export const translations = {
   en: {
     // Nav
@@ -40,6 +38,15 @@ export const translations = {
     hero_stat1_sub: 'Forever',
     hero_stat2_sub: 'Privacy First',
     hero_stat3_sub: 'Client-Side',
+
+    // Privacy Section (New Keys)
+    privacy_title: 'Your Files Stay on Your Device',
+    privacy_desc: 'All processing happens locally in your browser using the Web Canvas API. We never upload, store, or transmit your files to any server. Zero data collection. GDPR compliant.',
+    badge_uploads: 'No uploads',
+    badge_servers: 'No servers',
+    badge_tracking: 'No tracking',
+    badge_gdpr: 'GDPR compliant',
+    badge_free: '100% free',
 
     // Tools section
     tools_title: 'Available Tools',
@@ -110,7 +117,7 @@ export const translations = {
     site_name: 'Cozuro Tools',
     site_description: 'Free browser-based image and file tools. Compress images, convert formats — everything runs locally, your files never leave your device.',
 
-    // AdSense & SEO Content - WEBP Converter
+    // AdSense & SEO Content
     webp_seo_title: 'Why use our free WEBP Converter?',
     webp_seo_p1: 'The WEBP format, developed by Google, has become essential for the modern web. It offers superior compression that significantly reduces the size of images (JPG or PNG) while preserving exceptional visual quality. By using our online conversion tool, you speed up your website loading time, which greatly improves your SEO and user experience.',
     webp_seo_h2: '100% Secure and Local Conversion',
@@ -119,8 +126,6 @@ export const translations = {
     webp_seo_step1: 'Drag and drop your JPG, PNG, or WEBP files into the dedicated area above.',
     webp_seo_step2: 'The conversion process starts automatically in an instant.',
     webp_seo_step3: 'Download your new optimized image with just one click.',
-
-    // AdSense & SEO Content - Image Compressor
     compressor_seo_title: 'Optimize your images with our Free Image Compressor',
     compressor_seo_p1: 'Large images can severely slow down your website performance and hurt your rankings on search engines. Our advanced Image Compressor tool allows you to significantly reduce the file size of your photos without losing any visible quality. It is the perfect solution for bloggers, developers, and designers looking to optimize loading speeds.',
     compressor_seo_h2: 'Complete Quality Control & Ultimate Privacy',
@@ -151,6 +156,15 @@ export const translations = {
     hero_stat1_sub: 'للأبد',
     hero_stat2_sub: 'خصوصيتك أولاً',
     hero_stat3_sub: 'يعمل محلياً',
+
+    // Privacy Section (New Keys)
+    privacy_title: 'ملفاتك تبقى على جهازك',
+    privacy_desc: 'تتم جميع عمليات المعالجة محلياً في متصفحك باستخدام Web Canvas API. نحن لا نرفع ملفاتك أو نخزنها أو نرسلها إلى أي خادم. لا يوجد جمع للبيانات. متوافق مع GDPR.',
+    badge_uploads: 'بدون رفع',
+    badge_servers: 'بدون خوادم',
+    badge_tracking: 'بدون تتبع',
+    badge_gdpr: 'متوافق مع GDPR',
+    badge_free: 'مجاني 100%',
 
     tools_title: 'الأدوات المتاحة',
     tools_subtitle: 'أدوات احترافية تعمل بالكامل داخل متصفحك',
@@ -213,7 +227,6 @@ export const translations = {
     site_name: 'Cozuro Tools',
     site_description: 'أدوات مجانية للصور والملفات تعمل في المتصفح. اضغط الصور، حوّل الصيغ — كل شيء يعمل محلياً، ملفاتك لا تغادر جهازك.',
 
-    // AdSense & SEO Content - WEBP Converter
     webp_seo_title: 'لماذا يجب عليك استخدام محول WEBP المجاني الخاص بنا؟',
     webp_seo_p1: 'أصبح تنسيق WEBP، الذي طورته شركة Google، ضرورياً لشبكة الويب الحديثة. فهو يوفر ضغطاً فائقاً يقلل بشكل كبير من حجم الصور (JPG أو PNG) مع الحفاظ على جودة بصرية استثنائية. باستخدام أداة التحويل عبر الإنترنت، يمكنك تسريع وقت تحميل موقع الويب الخاص بك، مما يحسن بشكل كبير من أداء الـ SEO وتجربة المستخدمين.',
     webp_seo_h2: 'تحويل آمن ومحلي 100%',
@@ -223,7 +236,6 @@ export const translations = {
     webp_seo_step2: 'تبدأ عملية التحويل تلقائياً في لحظات.',
     webp_seo_step3: 'قم بتنزيل صورتك الجديدة المحسنة بنقرة واحدة فقط.',
 
-    // AdSense & SEO Content - Image Compressor
     compressor_seo_title: 'حسن أداء صورك مع ضاغط الصور المجاني الخاص بنا',
     compressor_seo_p1: 'يمكن للصور ذات الحجم الكبير أن تبطئ أداء موقعك الإلكتروني وتضر بترتيبك في محركات البحث. تتيح لك أداة ضغط الصور المتقدمة تقليل حجم ملفات الصور بشكل كبير دون أي فقدان ملحوظ في الجودة، مما يجعلها الحل المثالي لأصحاب المواقع والمطورين والمصممين.',
     compressor_seo_h2: 'تحكم كامل في الجودة وخصوصية تامة',
@@ -254,6 +266,15 @@ export const translations = {
     hero_stat1_sub: 'Pour toujours',
     hero_stat2_sub: 'Vie privée d\'abord',
     hero_stat3_sub: 'Côté client',
+
+    // Privacy Section (New Keys)
+    privacy_title: 'Vos fichiers restent sur votre appareil',
+    privacy_desc: 'Tout le traitement se fait localement dans votre navigateur en utilisant l\'API Web Canvas. Nous ne téléchargeons, ne stockons ni ne transmettons jamais vos fichiers à aucun serveur. Aucune collecte de données. Conforme au RGPD.',
+    badge_uploads: 'Sans envoi',
+    badge_servers: 'Sans serveurs',
+    badge_tracking: 'Sans suivi',
+    badge_gdpr: 'Conforme au RGPD',
+    badge_free: '100% gratuit',
 
     tools_title: 'Outils disponibles',
     tools_subtitle: 'Des outils professionnels qui fonctionnent entièrement dans votre navigateur',
@@ -316,7 +337,6 @@ export const translations = {
     site_name: 'Cozuro Tools',
     site_description: 'Outils gratuits d\'images et de fichiers basés sur le navigateur. Compressez des images, convertissez des formats — tout fonctionne localement, vos fichiers ne quittent jamais votre appareil.',
 
-    // AdSense & SEO Content - WEBP Converter
     webp_seo_title: 'Pourquoi utiliser notre Convertisseur WEBP gratuit ?',
     webp_seo_p1: 'Le format WEBP, développé par Google, est devenu indispensable pour le web moderne. Il offre une compression supérieure qui réduit considérablement la taille des images (JPG ou PNG) tout en préservant une qualité visuelle exceptionnelle. En utilisant notre outil de conversion en ligne, vous accélérez le temps de chargement de votre site web, ce qui améliore grandement votre SEO et l\'expérience de vos utilisateurs.',
     webp_seo_h2: 'Une conversion 100% sécurisée et locale',
@@ -326,7 +346,6 @@ export const translations = {
     webp_seo_step2: 'Le processus de conversion démarre automatiquement en un instant.',
     webp_seo_step3: 'Téléchargez votre nouvelle image optimisée en un seul clic.',
 
-    // AdSense & SEO Content - Image Compressor
     compressor_seo_title: 'Optimisez vos images avec notre Compresseur d\'image gratuit',
     compressor_seo_p1: 'Les images volumineuses peuvent ralentir considérablement votre site internet et nuire à votre référencement sur les moteurs de recherche. Notre outil avancé de compression d\'image vous permet de réduire efficacement le poids de vos fichiers sans perte visible de qualité. C\'est la solution idéale pour les blogueurs, développeurs et designers afin d\'améliorer la vitesse de chargement.',
     compressor_seo_h2: 'Contrôle total de la qualité et confidentialité ultime',
@@ -357,6 +376,15 @@ export const translations = {
     hero_stat1_sub: 'Für immer',
     hero_stat2_sub: 'Datenschutz zuerst',
     hero_stat3_sub: 'Clientseitig',
+
+    // Privacy Section (New Keys)
+    privacy_title: 'Ihre Dateien bleiben auf Ihrem Gerät',
+    privacy_desc: 'Die gesamte Verarbeitung erfolgt lokal in Ihrem Browser unter Verwendung der Web Canvas API. Wir laden Ihre Dateien niemals hoch, speichern sie nicht und übertragen sie nicht an einen Server. Keine Datenerfassung. DSGVO-konform.',
+    badge_uploads: 'Kein Upload',
+    badge_servers: 'Keine Server',
+    badge_tracking: 'Kein Tracking',
+    badge_gdpr: 'DSGVO-konform',
+    badge_free: '100% kostenlos',
 
     tools_title: 'Verfügbare Tools',
     tools_subtitle: 'Professionelle Tools, die vollständig in Ihrem Browser laufen',
@@ -419,7 +447,6 @@ export const translations = {
     site_name: 'Cozuro Tools',
     site_description: 'Kostenlose browserbasierte Bild- und Dateitools. Bilder komprimieren, Formate konvertieren — alles läuft lokal, Ihre Dateien verlassen niemals Ihr Gerät.',
 
-    // AdSense & SEO Content - WEBP Converter
     webp_seo_title: 'Warum sollten Sie unseren kostenlosen WEBP-Konverter nutzen?',
     webp_seo_p1: 'Das von Google entwickelte WEBP-Format ist für das moderne Web unverzichtbar geworden. Es bietet eine hervorragende Komprimierung, die die Größe von Bildern (JPG oder PNG) erheblich reduziert und gleichzeitig eine außergewöhnliche visuelle Qualität beibehält. Durch die Nutzung unseres Online-Konvertierungstools beschleunigen Sie die Ladezeit Ihrer Website, was Ihre SEO und die Benutzererfahrung erheblich verbessert.',
     webp_seo_h2: '100% sichere und lokale Konvertierung',
@@ -429,7 +456,6 @@ export const translations = {
     webp_seo_step2: 'Der Konvertierungsprozess startet automatisch in wenigen Augenblicken.',
     webp_seo_step3: 'Laden Sie Ihr neues, optimiertes Bild mit nur einem Klick herunter.',
 
-    // AdSense & SEO Content - Image Compressor
     compressor_seo_title: 'Optimieren Sie Ihre Bilder mit unserem kostenlosen Bildkompressor',
     compressor_seo_p1: 'Große Bilder können die Leistung Ihrer Website erheblich beeinträchtigen und Ihr Ranking in den Suchmaschinen verschlechtern. Unser fortschrittlicher Bildkompressor ermöglicht es Ihnen, die Dateigröße Ihrer Fotos drastisch zu reduzieren, ohne dass ein sichtbarer Qualitätsverlust entsteht. Die ideale Wahl für Entwickler und Blogger.',
     compressor_seo_h2: 'Vollständige Qualitätskontrolle & Maximale Privatsphäre',
@@ -440,6 +466,8 @@ export const translations = {
     compressor_seo_step3: 'Klicken Sie auf Komprimieren und laden Sie Ihr optimiertes Bild sofort herunter.',
   },
 } as const;
+
+export type TranslationKey = keyof typeof translations.en;
 
 export function t(locale: Locale, key: TranslationKey): string {
   return (translations[locale] as Record<string, string>)[key] ?? (translations.en as Record<string, string>)[key] ?? key;
