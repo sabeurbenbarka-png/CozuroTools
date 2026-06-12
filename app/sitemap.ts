@@ -1,7 +1,7 @@
 import type { MetadataRoute } from 'next';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://cozurotools.com';
+  const baseUrl = 'https://cozuro-tools.vercel.app';
   const now = new Date();
 
   return [

@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { DM_Sans, DM_Mono, Sora } from 'next/font/google';
 import { ThemeProvider } from 'next-themes';
 import { I18nProvider } from '@/i18n/context';
+import { Analytics } from '@vercel/analytics/react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import './globals.css';
@@ -27,7 +28,7 @@ const mono = DM_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://cozurotools.com'),
+  metadataBase: new URL('https://cozuro-tools.vercel.app'),
   title: {
     default: 'Cozuro Tools — Free Browser-Based File & Image Tools',
     template: '%s | Cozuro Tools',
@@ -46,6 +47,9 @@ export const metadata: Metadata = {
     'png to webp',
     'image optimizer',
   ],
+  verification: {
+    google: 'jQcyz_vu95qA-eW-jornb3amVn5VNh8HD_GAyc7R3pI',
+  },
   authors: [{ name: 'Cozuro Tools' }],
   creator: 'Cozuro Tools',
   openGraph: {
@@ -99,6 +103,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             <Footer />
           </I18nProvider>
         </ThemeProvider>
+        <Analytics />
       </body>
     </html>
   );
