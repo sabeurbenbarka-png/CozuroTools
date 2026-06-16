@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     template: '%s | Cozuro Tools',
   },
   description:
-    'Free browser-based image and file tools. Compress images, convert formats — everything runs locally, your files never leave your device.',
+    'Free browser-based image and PDF tools. Compress images, convert formats, merge PDFs — everything runs locally, your files never leave your device.',
   keywords: [
     'image compressor',
     'webp converter',
@@ -46,6 +46,14 @@ export const metadata: Metadata = {
     'jpg to webp',
     'png to webp',
     'image optimizer',
+    'pdf compressor',
+    'merge pdf',
+    'pdf to jpg',
+    'jpg to pdf',
+    'free pdf tools',
+    'compress pdf online',
+    'free online tools',
+    'browser based tools',
   ],
   verification: {
     google: 'jQcyz_vu95qA-eW-jornb3amVn5VNh8HD_GAyc7R3pI',
@@ -59,7 +67,7 @@ export const metadata: Metadata = {
     siteName: 'Cozuro Tools',
     title: 'Cozuro Tools — Free Browser-Based File & Image Tools',
     description:
-      'Compress images, convert formats — everything runs locally in your browser. Your files never leave your device.',
+      'Compress images, convert formats, merge PDFs — everything runs locally in your browser. Your files never leave your device.',
     images: [
       {
         url: '/og-image.png',
@@ -72,7 +80,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Cozuro Tools — Free Browser-Based File & Image Tools',
-    description: 'Free browser tools for image compression and format conversion. 100% client-side, zero uploads.',
+    description: 'Free browser tools for image and PDF processing. 100% client-side, zero uploads.',
     images: ['/og-image.png'],
   },
   robots: {
@@ -93,7 +101,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en" suppressHydrationWarning>
       <head>
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-        <link rel="canonical" href="https://cozurotools.com" />
+        <link rel="canonical" href="https://cozuro-tools.vercel.app" />
       </head>
       <body className={`${body.variable} ${display.variable} ${mono.variable} slate-950 text-slate-900 dark:text-slate-100 min-h-screen flex flex-col`}>
         <ThemeProvider attribute="class" defaultTheme="system">
