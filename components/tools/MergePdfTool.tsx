@@ -9,7 +9,7 @@ type ProcessState = 'idle' | 'processing' | 'done' | 'error';
 interface PdfEntry {
   id: string;
   file: File;
-  pageCount: number | null; // null until loaded
+  pageCount: number | null;
 }
 
 const MAX_SIZE_BYTES = 50 * 1024 * 1024;
@@ -66,7 +66,6 @@ export default function MergePdfTool() {
       setResultUrl(null);
       setState('idle');
 
-      // Load page counts async (non-blocking)
       for (const entry of valid) {
         getPdfPageCount(entry.file).then((count) => {
           setPdfs((prev) =>
@@ -93,7 +92,6 @@ export default function MergePdfTool() {
     setState('idle');
   };
 
-  // Drag-to-reorder
   const handleDragStart = (id: string) => { dragItem.current = id; };
   const handleDragEnter = (id: string) => { setDragOverId(id); };
   const handleDragEnd = () => {
@@ -120,7 +118,6 @@ export default function MergePdfTool() {
     setErrorMsg(null);
 
     try {
-      // Dynamic import — only loaded when merge is triggered
       const { PDFDocument } = await import('pdf-lib');
 
       const mergedDoc = await PDFDocument.create();
@@ -134,8 +131,8 @@ export default function MergePdfTool() {
       }
 
       const mergedBytes = await mergedDoc.save({ useObjectStreams: true });
-      // ✅ FIX: Convert Uint8Array to ArrayBuffer for Blob compatibility
-      const blob = new Blob([mergedBytes.buffer], { type: 'application/pdf' });
+      // ✅ FIX: Use mergedBytes directly (Uint8Array)
+      const blob = new Blob([mergedBytes], { type: 'application/pdf' });
       const url = URL.createObjectURL(blob);
       if (resultUrl) URL.revokeObjectURL(resultUrl);
       setResultUrl(url);
@@ -162,7 +159,6 @@ export default function MergePdfTool() {
 
   return (
     <div className="space-y-6">
-      {/* Drop zone */}
       <div
         onDragOver={(e) => e.preventDefault()}
         onDrop={handleDrop}
@@ -188,7 +184,6 @@ export default function MergePdfTool() {
         className="hidden"
       />
 
-      {/* PDF list */}
       {pdfs.length > 0 && (
         <div className="space-y-3 animate-slide-up">
           <div className="flex items-center justify-between">
@@ -248,7 +243,6 @@ export default function MergePdfTool() {
         </div>
       )}
 
-      {/* Merge button */}
       {pdfs.length >= 2 && (
         <button
           onClick={merge}
@@ -275,12 +269,10 @@ export default function MergePdfTool() {
         </p>
       )}
 
-      {/* Error */}
       {errorMsg && (
         <p className="text-sm text-red-600 dark:text-red-400 font-medium animate-fade-in">⚠ {errorMsg}</p>
       )}
 
-      {/* Result */}
       {state === 'done' && resultUrl && (
         <div className="rounded-2xl border border-indigo-200 dark:border-indigo-800/60 bg-indigo-50 dark:bg-indigo-950/20 p-5 animate-slide-up space-y-3">
           <h3 className="text-sm font-bold text-indigo-800 dark:text-indigo-300 uppercase tracking-wider">
