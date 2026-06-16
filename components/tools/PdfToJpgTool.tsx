@@ -112,7 +112,8 @@ export default function PdfToJpgTool() {
         ctx.fillStyle = '#ffffff';
         ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-        await page.render({ canvasContext: ctx as CanvasRenderingContext2D, viewport }).promise;
+        // ✅ Fix: use canvas property instead of canvasContext (PDF.js v4.x)
+        await page.render({ canvas, viewport }).promise;
 
         const dataUrl = canvas.toDataURL('image/jpeg', 0.92);
         results.push({
