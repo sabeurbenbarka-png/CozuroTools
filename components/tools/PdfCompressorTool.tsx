@@ -124,7 +124,8 @@ export default function PdfCompressorTool() {
 
   const handleDownload = () => {
     if (!result) return;
-    const blob = new Blob([result.bytes], { type: 'application/pdf' });
+    // ✅ Fix: cast buffer to ArrayBuffer to satisfy TypeScript
+    const blob = new Blob([result.bytes.buffer as ArrayBuffer], { type: 'application/pdf' });
     const url = URL.createObjectURL(blob);
     const a = document.createElement('a');
     a.href = url;
