@@ -55,7 +55,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: 'https://cozurotools.com',
+    url: 'https://cozuro-tools.vercel.app',
     siteName: 'Cozuro Tools',
     title: 'Cozuro Tools — Free Browser-Based File & Image Tools',
     description:
