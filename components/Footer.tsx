@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { Shield } from 'lucide-react';
+import { Zap, Shield } from 'lucide-react';
 import { useI18n } from '@/i18n/context';
 
 export default function Footer() {
@@ -11,6 +11,10 @@ export default function Footer() {
   const tools = [
     { href: '/tools/image-compressor', label: t('tool_compressor_name') },
     { href: '/tools/webp-converter', label: t('tool_webp_name') },
+    { href: '/tools/jpg-to-pdf', label: t('tool_jpg_to_pdf_name') },
+    { href: '/tools/pdf-compressor', label: t('tool_pdf_compressor_name') },
+    { href: '/tools/pdf-to-jpg', label: t('tool_pdf_to_jpg_name') },
+    { href: '/tools/merge-pdf', label: t('tool_merge_pdf_name') },
   ];
 
   const legal = [
@@ -24,14 +28,11 @@ export default function Footer() {
     <footer className="border-t border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-950">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10 lg:gap-16">
-          {/* Brand */}
           <div>
-            <Link href="/" className="flex items-center gap-2 mb-4 group">
-              <img 
-                src="/logo.png" 
-                alt="Cozuro Tools Logo" 
-                className="h-8 w-auto object-contain transition-transform group-hover:scale-105" 
-              />
+            <Link href="/" className="flex items-center gap-2 mb-4">
+              <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-to-br from-sky-500 to-blue-600">
+                <Zap className="h-4 w-4 text-white" strokeWidth={2.5} />
+              </div>
               <span className="font-display text-lg font-bold text-slate-900 dark:text-white">
                 Cozuro<span className="text-sky-500">Tools</span>
               </span>
@@ -45,7 +46,6 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Tools */}
           <div>
             <h3 className="text-sm font-semibold text-slate-900 dark:text-white mb-4 uppercase tracking-wider">
               {t('footer_tools')}
@@ -64,7 +64,6 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Legal */}
           <div>
             <h3 className="text-sm font-semibold text-slate-900 dark:text-white mb-4 uppercase tracking-wider">
               {t('footer_legal')}
