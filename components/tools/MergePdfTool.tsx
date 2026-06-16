@@ -134,7 +134,8 @@ export default function MergePdfTool() {
       }
 
       const mergedBytes = await mergedDoc.save({ useObjectStreams: true });
-      const blob = new Blob([mergedBytes], { type: 'application/pdf' });
+      // ✅ FIX: Convert Uint8Array to ArrayBuffer for Blob compatibility
+      const blob = new Blob([mergedBytes.buffer], { type: 'application/pdf' });
       const url = URL.createObjectURL(blob);
       if (resultUrl) URL.revokeObjectURL(resultUrl);
       setResultUrl(url);
